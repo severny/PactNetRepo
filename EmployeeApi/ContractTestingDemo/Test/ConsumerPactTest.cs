@@ -9,6 +9,9 @@ using Xunit;
 
 namespace ContractTestingDemo.Test
 {
+    using Mock;
+    using PactNet.Mocks.MockHttpService.Models;
+
     // consumer test
     public class ConsumerPactTest : IClassFixture<ConsumerPact>
     {
@@ -22,5 +25,81 @@ namespace ContractTestingDemo.Test
             _mockProviderServiceBaseUri = data.MockProviderServiceBaseUri;
         }
 
+        [Fact]
+        public void GetEmployeeDetails_VerifyIfItReturns()
+        {
+            _mockProviderService
+                .Given("Employee details for id '1'")
+                .UponReceiving("A GET request to retrieve the employee details")
+                .With(new ProviderServiceRequest()
+                {
+                    Method = HttpVerb.Get,
+                    Path = "/employee/2",
+                    Headers = new Dictionary<string, object>
+                    {
+                        {"Accept", "application/json"}
+                    }
+                })
+                .WillRespondWith(new ProviderServiceResponse
+                    {
+                        Status = 200,
+                        Headers = new Dictionary<string, object>()
+                        {
+                            {"Content-type", "application/json; charset=utf-8"}
+                        },
+                        Body = new
+                        {
+                            id = 2,
+                            name = "Mary Smith",
+                            city = "Paris"
+                        }
+                    });
+
+            var consumer = new ApiClient(_mockProviderServiceBaseUri);
+
+            var result = consumer.GetEmployeeDetails(2);
+
+            Assert.Equal("Mary Smith", result.Name);
+            _mockProviderService.VerifyInteractions();
+        }
+
+        /*
+        [Fact]
+        public void TestWorkingScenario()
+        {
+            _mockProviderService
+                .UponReceiving("A post request to create new thing")
+                .With(new ProviderServiceRequest()
+                {
+                    Method = HttpVerb.Post,
+                    Path = "/employee/",
+                    Headers = new Dictionary<string, object>
+                    {
+                        {"Accept", "application/json"}
+                    },
+                    Body = new
+                    {
+                        id = 3,
+                        name = "Test Employee",
+                        city = "Test city"
+                    }
+
+                })
+                .WillRespondWith(new ProviderServiceResponse
+                {
+                    Status = 200,
+                    Headers = new Dictionary<string, object>()
+                    {
+                        {"Content-type", "application/json; charset=utf-8"}
+                    },
+                    Body = new
+                    {
+                        id = 2,
+                        name = "Mary Smith",
+                        city = "Paris"
+                    }
+                });
+        }
+        */
     }
 }
