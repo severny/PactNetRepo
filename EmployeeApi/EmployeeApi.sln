@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeApi", "EmployeeApi\EmployeeApi.csproj", "{013F1416-0390-46C3-8DC0-FBB086C84484}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeApi", "EmployeeApi\EmployeeApi.csproj", "{013F1416-0390-46C3-8DC0-FBB086C84484}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContractTestingDemo", "ContractTestingDemo\ContractTestingDemo.csproj", "{C7665B77-0CB3-4FD6-87B3-A77EAF9F7DEE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{013F1416-0390-46C3-8DC0-FBB086C84484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{013F1416-0390-46C3-8DC0-FBB086C84484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{013F1416-0390-46C3-8DC0-FBB086C84484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7665B77-0CB3-4FD6-87B3-A77EAF9F7DEE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7665B77-0CB3-4FD6-87B3-A77EAF9F7DEE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7665B77-0CB3-4FD6-87B3-A77EAF9F7DEE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7665B77-0CB3-4FD6-87B3-A77EAF9F7DEE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
