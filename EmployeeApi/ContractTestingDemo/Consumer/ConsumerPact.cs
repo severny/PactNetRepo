@@ -29,7 +29,7 @@ namespace ContractTestingDemo.Consumer
             PactBuilder = new PactBuilder(pactConfig);
             PactBuilder
                 .ServiceConsumer("Service_Consumer")
-                .HasPactWith("EmploeeList");
+                .HasPactWith("EmployeeList");
 
             MockProviderService = PactBuilder.MockService(MockServicePort);
         }

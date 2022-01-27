@@ -62,44 +62,5 @@ namespace ContractTestingDemo.Test
             Assert.Equal("Mary Smith", result.Name);
             _mockProviderService.VerifyInteractions();
         }
-
-        /*
-        [Fact]
-        public void TestWorkingScenario()
-        {
-            _mockProviderService
-                .UponReceiving("A post request to create new thing")
-                .With(new ProviderServiceRequest()
-                {
-                    Method = HttpVerb.Post,
-                    Path = "/employee/",
-                    Headers = new Dictionary<string, object>
-                    {
-                        {"Accept", "application/json"}
-                    },
-                    Body = new
-                    {
-                        id = 3,
-                        name = "Test Employee",
-                        city = "Test city"
-                    }
-
-                })
-                .WillRespondWith(new ProviderServiceResponse
-                {
-                    Status = 200,
-                    Headers = new Dictionary<string, object>()
-                    {
-                        {"Content-type", "application/json; charset=utf-8"}
-                    },
-                    Body = new
-                    {
-                        id = 2,
-                        name = "Mary Smith",
-                        city = "Paris"
-                    }
-                });
-        }
-        */
     }
 }
