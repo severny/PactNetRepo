@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "27ef3465-79dc-4020-bed6-92659434b32f": {
+      "ProjectGuid": "27ef3465-79dc-4020-bed6-92659434b32f",
+      "DisplayName": "WebApplication1",
+      "ColorIndex": 0
+    },
+    "24387162-dc09-4ca4-b525-cd66ea991a06": {
+      "ProjectGuid": "24387162-dc09-4ca4-b525-cd66ea991a06",
+      "DisplayName": "EmployeeApi",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
